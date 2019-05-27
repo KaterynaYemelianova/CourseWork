@@ -1,0 +1,14 @@
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\bin\Debug\CourseWork.exe.config
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\bin\Debug\CourseWork.exe
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\bin\Debug\CourseWork.pdb
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.csprojResolveAssemblyReference.cache
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Properties.Resources.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.csproj.GenerateResource.Cache
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.exe
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.pdb
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.MainMenu.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.InputDataStars.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.AddObjectForm.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.AddAsterism.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.ViewAsterism.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.ViewStar.resources
