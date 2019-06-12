@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using CourseWork.Model;
 using CourseWork.Database;
 
-namespace CourseWork
+namespace CourseWork.Forms
 {
     public partial class AddSubstance : Form
     {

@@ -10,20 +10,17 @@ using System.Windows.Forms;
 using CourseWork.Model;
 using CourseWork.Database;
 
-namespace CourseWork
+namespace CourseWork.Forms
 {
     public partial class ViewSubstance : Form
     {
         private List<Substance> Targets = new List<Substance>();
         private List<Predicate<Substance>> Filters = new List<Predicate<Substance>>();
-        //private DataTable GridContext = DbContext.GetDataTable<Star>();
 
         public ViewSubstance()
         {
             InitializeComponent();
 
-            //GridContext.Rows.Clear();
-            //StarGrid.DataSource = GridContext;
             Targets = Archive.Substances;
             Constants.FillDataGrid(Targets, SubstanceGrid);
         }
@@ -68,6 +65,13 @@ namespace CourseWork
             int RowId = GetSelectedRowId();
             if (RowId == -1)
                 return;
+
+            Substance SDel = Targets[RowId];
+            if (Archive.Stars.Where(S => S.SubstancesPercentage.Select(SP => SP.Key.ID).Contains(SDel.ID)).Count() != 0)
+            {
+                MessageBox.Show("Невозможно удалить вещество т.к. к оно содержится в звезде");
+                return;
+            }
 
             Archive.Delete<Substance>(Targets[RowId]);
             UpdateTable();

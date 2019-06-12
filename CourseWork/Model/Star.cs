@@ -26,6 +26,7 @@ namespace CourseWork.Model
         public override string DataTableName { get { return "StarTable"; } }
         public override string ViewTableName { get { return "Звезда"; } }
         public override string IdFieldName { get { return "id"; } }
+        public override int RowCount { get { return SubstancesPercentage.Count; } }
 
         public Star() : base() { }
         public Star(string name, int date, Discoverer discoverer, Asterism starasterism, 

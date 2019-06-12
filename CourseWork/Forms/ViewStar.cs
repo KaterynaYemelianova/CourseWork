@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using CourseWork.Model;
 using CourseWork.Database;
 
-namespace CourseWork
+namespace CourseWork.Forms
 {
     public partial class ViewStar : Form
     {
@@ -99,7 +99,12 @@ namespace CourseWork
             if (RowId == -1)
                 return;
 
-            Archive.Delete<Star>(Targets[RowId]);
+            Star SDel = Targets[RowId];
+            List<Star_Substance> Substances = Archive.StarSubstances.Where(S => S.StarId == SDel.ID).ToList();
+            foreach (Star_Substance SSP in Substances)
+                Archive.Delete<Star_Substance>(SSP);
+
+            Archive.Delete<Star>(SDel);
             UpdateTable();
         }
 

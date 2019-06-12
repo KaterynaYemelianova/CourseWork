@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using CourseWork.Model;
 using CourseWork.Database;
 
-namespace CourseWork
+namespace CourseWork.Forms
 {
     public partial class InputDataStars : Form
     {
@@ -62,7 +62,12 @@ namespace CourseWork
 
             ObjName.Text = S.Name;
             Date.Value = S.Date;
-            ObjectDiscoverer.SelectedItem = S.SDiscoverer;
+
+            if (S.SDiscoverer == null)
+                ObjectDiscoverer.SelectedIndex = 0;
+            else
+                ObjectDiscoverer.SelectedItem = S.SDiscoverer;
+
             AsterismSelect.SelectedItem = S.StarAsterism;
             Distance.Value = (decimal)S.Distance;
             Mass.Value = (decimal)S.Mass;
@@ -71,6 +76,16 @@ namespace CourseWork
 
             ColorVars = S.VisColor;
             VisColor.BackColor = ColorVars;
+
+            SubstanceCount.Value = S.SubstancesPercentage.Count;
+            for(int i = 0; i < SubstanceSelects.Count && i < S.SubstancesPercentage.Count; i++)
+                for(int j = 0; j < SubstanceSelects[i].CB.Items.Count; j++)
+                    if ((SubstanceSelects[i].CB.Items[j] as Substance).ID == S.SubstancesPercentage.ElementAt(i).Key.ID)
+                    {
+                        SubstanceSelects[i].CB.SelectedIndex = j;
+                        SubstanceSelects[i].NUM.Value = (decimal)S.SubstancesPercentage.ElementAt(i).Value;
+                        break;
+                    }
         }
 
         private void VisColor_Click(object sender, EventArgs e)
@@ -84,6 +99,12 @@ namespace CourseWork
 
         private void Confirm_Click(object sender, EventArgs e)
         {
+            if (SubstanceSelects.Sum(S => S.NUM.Value) != 1)
+            {
+                MessageBox.Show("Сумма часток речовин повинна дорівнювати 1!");
+                return;
+            }
+
             if (isAddition)
             {
                 List<string> IDS = Archive.Add<Star>(new Star(
@@ -95,16 +116,26 @@ namespace CourseWork
                     Convert.ToDouble(Mass.Value),
                     Convert.ToDouble(TMin.Value),
                     Convert.ToDouble(TMax.Value),
-                    ColorVars,
-                    SubstanceSelects.ToDictionary(S => (Substance)S.CB.SelectedItem, S => (double)S.NUM.Value)
+                    ColorVars
                 ));
 
                 int id = Convert.ToInt32(IDS[0]);
-                foreach(SubstanceInput SI in SubstanceSelects)
+                foreach(SubstanceInput SI in SubstanceSelects) // добавлние данных о веществах в звезде в БД
                     Archive.Add<Star_Substance>(new Star_Substance(id, (SI.CB.SelectedItem as Substance).ID, (double)SI.NUM.Value));
+
+                Star ST = Archive.Stars.Single(S => S.ID == id);
+                foreach (SubstanceInput SI in SubstanceSelects) // добавлние данных о веществах в модель
+                    ST.SubstancesPercentage.Add(SI.CB.SelectedItem as Substance, (double)SI.NUM.Value);
             }
             else
             {
+                List<Star_Substance> Substances = Archive.StarSubstances.Where(S => S.StarId == Updated.ID).ToList();
+                foreach (Star_Substance SSP in Substances) //удаление из БД всех данных о веществах в этой звезде
+                    Archive.Delete<Star_Substance>(SSP);
+
+                foreach (SubstanceInput SI in SubstanceSelects) //добавление в БД новых данных о веществах в этой звезде
+                    Archive.Add<Star_Substance>(new Star_Substance(Updated.ID, (SI.CB.SelectedItem as Substance).ID, (double)SI.NUM.Value));
+
                 Archive.Update<Star>(new Star(
                     ObjName.Text,
                     Convert.ToInt32(Date.Value),
@@ -118,6 +149,11 @@ namespace CourseWork
                     SubstanceSelects.ToDictionary(S => (Substance)S.CB.SelectedItem, S => (double)S.NUM.Value),
                     Updated.ID
                 ));
+
+                Star ST = Archive.Stars.Single(S => S.ID == Updated.ID);
+                ST.SubstancesPercentage.Clear();//удаление из модели(состояния соответствующего объекта зведзы) всех данных о веществах в этой звезде
+                foreach (SubstanceInput SI in SubstanceSelects)//добавлние в модель всех данных о веществах в этой звезде
+                    ST.SubstancesPercentage.Add(SI.CB.SelectedItem as Substance, (double)SI.NUM.Value);
             }
             MessageBox.Show("Звезда добавлена", "Готово!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
@@ -139,8 +175,10 @@ namespace CourseWork
             }
             else
             {
+                //Создание надписи
                 Label L = new Label();
                 L.Text = "Вещество №" + SubstanceCount.Value + ": ";
+                L.AutoSize = true;
                 L.Font = NameLabel.Font;
                 L.Location = new Point(SubstanceCountLabel.Location.X, SubstanceCount.Location.Y +
                                                                       (SubstanceCount.Height + MarginH) * 
@@ -148,6 +186,7 @@ namespace CourseWork
 
                 this.Controls.Add(L);
 
+                //Создание списка веществ
                 ComboBox CB = new ComboBox();
                 CB.Font = NameLabel.Font;
                 foreach (Substance S in Archive.Substances)
@@ -157,11 +196,13 @@ namespace CourseWork
                     CB.SelectedIndex = 0;
 
                 CB.Size = SubstanceCount.Size;
+                CB.DropDownStyle = ComboBoxStyle.DropDownList;
                 CB.Location = new Point(L.Location.X + L.Width + MarginW, SubstanceCount.Location.Y +
                                                                          (SubstanceCount.Height + MarginH) *
                                                                          (int)SubstanceCount.Value);
                 this.Controls.Add(CB);
 
+                //Создание поля для ввода процента
                 NumericUpDown NUM = new NumericUpDown();
                 NUM.Font = NameLabel.Font;
                 NUM.DecimalPlaces = 2;
@@ -174,16 +215,17 @@ namespace CourseWork
                         N.Maximum = 1 - SubstanceSelects.Where(NM => NM.NUM != N).Sum(S => S.NUM.Value);
                 };
                 NUM.Size = SubstanceCount.Size;
-                NUM.Location = new Point(this.Width - NUM.Width - MarginW, SubstanceCount.Location.Y +
-                                                                     (SubstanceCount.Height + MarginH) *
-                                                                     (int)SubstanceCount.Value);
+                NUM.Location = new Point(SubstanceCount.Location.X, SubstanceCount.Location.Y +
+                                                                   (SubstanceCount.Height + MarginH) *
+                                                                   (int)SubstanceCount.Value);
                 this.Controls.Add(NUM);
 
                 SubstanceSelects.Add(new SubstanceInput(L, CB, NUM));
 
+                //если поля не помещаются на форму - увеличиваем ее
                 if (CB.Location.Y + CB.Height + MarginH >= Confirm.Location.Y - Confirm.Height - MarginH)
                     this.Height += CB.Height + MarginH;
-
+                //и двигаем кнопку
                 Confirm.Location = new Point(Confirm.Location.X, SubstanceCount.Location.Y +
                                         (SubstanceCount.Height + MarginH) * ((int)SubstanceCount.Value + 1));
             }

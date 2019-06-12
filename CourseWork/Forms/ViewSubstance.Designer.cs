@@ -1,4 +1,4 @@
-﻿namespace CourseWork
+﻿namespace CourseWork.Forms
 {
     partial class ViewSubstance
     {
@@ -43,10 +43,11 @@
             this.SubstanceGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.SubstanceGrid.Dock = System.Windows.Forms.DockStyle.Top;
             this.SubstanceGrid.Location = new System.Drawing.Point(0, 0);
-            this.SubstanceGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SubstanceGrid.Margin = new System.Windows.Forms.Padding(4);
             this.SubstanceGrid.MultiSelect = false;
             this.SubstanceGrid.Name = "SubstanceGrid";
             this.SubstanceGrid.ReadOnly = true;
+            this.SubstanceGrid.RowHeadersVisible = false;
             this.SubstanceGrid.RowTemplate.Height = 24;
             this.SubstanceGrid.Size = new System.Drawing.Size(610, 427);
             this.SubstanceGrid.TabIndex = 0;
@@ -54,27 +55,29 @@
             // ChangeSelected
             // 
             this.ChangeSelected.Location = new System.Drawing.Point(325, 435);
-            this.ChangeSelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ChangeSelected.Margin = new System.Windows.Forms.Padding(4);
             this.ChangeSelected.Name = "ChangeSelected";
             this.ChangeSelected.Size = new System.Drawing.Size(272, 48);
             this.ChangeSelected.TabIndex = 15;
             this.ChangeSelected.Text = "Изменить выделенную запись";
             this.ChangeSelected.UseVisualStyleBackColor = true;
+            this.ChangeSelected.Click += new System.EventHandler(this.ChangeSelected_Click);
             // 
             // DeleteSelected
             // 
             this.DeleteSelected.Location = new System.Drawing.Point(325, 491);
-            this.DeleteSelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteSelected.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteSelected.Name = "DeleteSelected";
             this.DeleteSelected.Size = new System.Drawing.Size(272, 48);
             this.DeleteSelected.TabIndex = 14;
             this.DeleteSelected.Text = "Удалить выделенную запись";
             this.DeleteSelected.UseVisualStyleBackColor = true;
+            this.DeleteSelected.Click += new System.EventHandler(this.DeleteSelected_Click);
             // 
             // Search
             // 
             this.Search.Location = new System.Drawing.Point(84, 469);
-            this.Search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Search.Margin = new System.Windows.Forms.Padding(4);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(124, 31);
             this.Search.TabIndex = 18;
@@ -101,7 +104,7 @@
             this.Controls.Add(this.DeleteSelected);
             this.Controls.Add(this.SubstanceGrid);
             this.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ViewSubstance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewSubstance";

@@ -1,4 +1,4 @@
-﻿namespace CourseWork
+﻿namespace CourseWork.Forms
 {
     partial class ViewDiscoverer
     {
@@ -43,10 +43,11 @@
             this.DiscovererGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DiscovererGrid.Dock = System.Windows.Forms.DockStyle.Top;
             this.DiscovererGrid.Location = new System.Drawing.Point(0, 0);
-            this.DiscovererGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DiscovererGrid.Margin = new System.Windows.Forms.Padding(4);
             this.DiscovererGrid.MultiSelect = false;
             this.DiscovererGrid.Name = "DiscovererGrid";
             this.DiscovererGrid.ReadOnly = true;
+            this.DiscovererGrid.RowHeadersVisible = false;
             this.DiscovererGrid.RowTemplate.Height = 24;
             this.DiscovererGrid.Size = new System.Drawing.Size(610, 427);
             this.DiscovererGrid.TabIndex = 0;
@@ -54,7 +55,7 @@
             // DeleteSelected
             // 
             this.DeleteSelected.Location = new System.Drawing.Point(325, 491);
-            this.DeleteSelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteSelected.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteSelected.Name = "DeleteSelected";
             this.DeleteSelected.Size = new System.Drawing.Size(272, 48);
             this.DeleteSelected.TabIndex = 6;
@@ -65,7 +66,7 @@
             // ChangeSelected
             // 
             this.ChangeSelected.Location = new System.Drawing.Point(325, 435);
-            this.ChangeSelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ChangeSelected.Margin = new System.Windows.Forms.Padding(4);
             this.ChangeSelected.Name = "ChangeSelected";
             this.ChangeSelected.Size = new System.Drawing.Size(272, 48);
             this.ChangeSelected.TabIndex = 12;
@@ -86,7 +87,7 @@
             // Search
             // 
             this.Search.Location = new System.Drawing.Point(84, 469);
-            this.Search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Search.Margin = new System.Windows.Forms.Padding(4);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(124, 31);
             this.Search.TabIndex = 14;
@@ -103,7 +104,7 @@
             this.Controls.Add(this.DeleteSelected);
             this.Controls.Add(this.DiscovererGrid);
             this.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ViewDiscoverer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewDiscoverer";

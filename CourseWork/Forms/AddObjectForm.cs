@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CourseWork.Model;
 
-namespace CourseWork
+namespace CourseWork.Forms
 {
     public partial class AddObjectForm : Form
     {

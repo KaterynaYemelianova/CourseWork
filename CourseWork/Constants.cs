@@ -22,12 +22,12 @@ namespace CourseWork
         public delegate Form FormGetter();
         public delegate bool Validator();
 
-        public static string GetTableName<T>() where T : Database.IDbItem, new()
+        public static string GetTableName<T>() where T : IDbItem, new()
         {
             return new T().DataTableName;
         }
 
-        public static string GetIdFieldName<T>() where T : Database.IDbItem, new()
+        public static string GetIdFieldName<T>() where T : IDbItem, new()
         {
             return new T().IdFieldName;
         }
@@ -93,6 +93,9 @@ namespace CourseWork
         {
             dgw.DataSource = Constants.CreateDataTableOf(items);
             Constants.ConfigureGridSizes(items, dgw);
+
+            foreach (DataGridViewColumn C in dgw.Columns)
+                C.SortMode = DataGridViewColumnSortMode.NotSortable;
         }
 
         public static string FormatDate(DateTime dt)

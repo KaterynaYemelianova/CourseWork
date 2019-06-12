@@ -1,4 +1,4 @@
-﻿namespace CourseWork
+﻿namespace CourseWork.Forms
 {
     partial class ViewStar
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.StarGrid = new System.Windows.Forms.DataGridView();
             this.DeleteSelected = new System.Windows.Forms.Button();
             this.ChangeSelected = new System.Windows.Forms.Button();
@@ -75,6 +76,8 @@
             this.StarGrid.Name = "StarGrid";
             this.StarGrid.ReadOnly = true;
             this.StarGrid.RowHeadersVisible = false;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.StarGrid.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.StarGrid.RowTemplate.Height = 24;
             this.StarGrid.Size = new System.Drawing.Size(1152, 502);
             this.StarGrid.TabIndex = 0;
@@ -309,6 +312,7 @@
             // 
             // AsterismChoice
             // 
+            this.AsterismChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AsterismChoice.FormattingEnabled = true;
             this.AsterismChoice.Location = new System.Drawing.Point(639, 124);
             this.AsterismChoice.Margin = new System.Windows.Forms.Padding(4);
@@ -319,6 +323,7 @@
             // 
             // DiscovererChoice
             // 
+            this.DiscovererChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DiscovererChoice.FormattingEnabled = true;
             this.DiscovererChoice.Location = new System.Drawing.Point(639, 181);
             this.DiscovererChoice.Margin = new System.Windows.Forms.Padding(4);

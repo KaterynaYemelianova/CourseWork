@@ -7,7 +7,7 @@ using System.Data;
 
 namespace CourseWork.Model
 {
-    public class Discoverer : ModelItem //IDbParseable
+    public class Discoverer : ModelItem
     {
         public int ID { get; private set; }
         public string Name { get; private set; }

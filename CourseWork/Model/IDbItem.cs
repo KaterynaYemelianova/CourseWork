@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using CourseWork.Model;
 using CourseWork.Database;
 
-namespace CourseWork.Database
+namespace CourseWork.Model
 {
     public interface IDbItem
     {

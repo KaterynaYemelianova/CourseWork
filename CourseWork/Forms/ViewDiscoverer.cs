@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using CourseWork.Model;
 using CourseWork.Database;
 
-namespace CourseWork
+namespace CourseWork.Forms
 {
     public partial class ViewDiscoverer : Form
     {
@@ -20,9 +20,9 @@ namespace CourseWork
         public ViewDiscoverer()
         {
             InitializeComponent();
+
             Targets = Archive.Discoverers;
             Constants.FillDataGrid(Archive.Discoverers, DiscovererGrid);
-            //UpdateTable();
         }
 
         public void UpdateTable()
@@ -61,7 +61,14 @@ namespace CourseWork
             if (RowId == -1)
                 return;
 
-            Archive.Delete<Discoverer>(Targets[RowId]);
+            Discoverer DDel = Targets[RowId];
+            if (Archive.Stars.Where(S => S.SDiscoverer.ID == DDel.ID).Count() != 0)
+            {
+                MessageBox.Show("Невозможно удалить первооткрывателя т.к. он открыл звезду");
+                return;
+            }
+
+            Archive.Delete<Discoverer>(DDel);
             UpdateTable();
         }
 

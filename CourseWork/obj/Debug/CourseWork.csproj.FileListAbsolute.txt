@@ -19,3 +19,21 @@ C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\ob
 C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork — копия\CourseWork\bin\Debug\CourseWork.exe.config
 C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork — копия\CourseWork\obj\Debug\CourseWork.exe
 C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork — копия\CourseWork\obj\Debug\CourseWork.pdb
+C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\bin\Debug\CourseWork.exe.config
+C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.exe
+C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.pdb
+C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\bin\Debug\CourseWork.exe
+C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\bin\Debug\CourseWork.pdb
+C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.csprojResolveAssemblyReference.cache
+C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Properties.Resources.resources
+C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.csproj.GenerateResource.Cache
+C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.AddDiscoverer.resources
+C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.AddObjectForm.resources
+C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.AddSubstance.resources
+C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.InputDataStars.resources
+C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.MainMenu.resources
+C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.AddAsterism.resources
+C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.ViewAsterism.resources
+C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.ViewDiscoverer.resources
+C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.ViewStar.resources
+C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.ViewSubstance.resources

@@ -1,4 +1,4 @@
-﻿namespace CourseWork
+﻿namespace CourseWork.Forms
 {
     partial class AddSubstance
     {

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using CourseWork.Model;
 using CourseWork.Database;
 
-namespace CourseWork
+namespace CourseWork.Forms
 {
     public partial class ViewAsterism : Form
     {
@@ -20,9 +20,9 @@ namespace CourseWork
         public ViewAsterism()
         {
             InitializeComponent();
+
             Targets = Archive.Asterisms;
             Constants.FillDataGrid(Targets, AsterismGrid);
-            //UpdateTable();
         }
 
         public void UpdateTable()
@@ -68,7 +68,14 @@ namespace CourseWork
             if (RowId == -1)
                 return;
 
-            Archive.Delete<Asterism>(Targets[RowId]);
+            Asterism ADel = Targets[RowId];
+            if (Archive.Stars.Where(S => S.StarAsterism.ID == ADel.ID).Count() != 0)
+            {
+                MessageBox.Show("Невозможно удалить созвездие т.к. к нему привязана звезда");
+                return;
+            }
+
+            Archive.Delete<Asterism>(ADel);
             UpdateTable();
         }
 
