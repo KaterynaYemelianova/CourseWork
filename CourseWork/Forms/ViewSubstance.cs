@@ -31,7 +31,6 @@ namespace CourseWork.Forms
             SubstanceGrid.ClearSelection();
 
             Targets = Archive.Substances;
-            //Targets = DbContext.Select<Star>(Filters.ToArray());
 
             foreach (Predicate<Substance> F in Filters)
                 Targets = Targets.Where(S => F(S)).ToList();
@@ -43,12 +42,8 @@ namespace CourseWork.Forms
         {
             Filters.Clear();
 
-            //TODO
-
-            /*if (SquareFilterChecker.Checked)
-                Filters.Add(A => A.Square >= Convert.ToDouble(SquareLower.Value) &&
-                                 A.Square <= Convert.ToDouble(SquareUpper.Value));*/
             Filters.Add(S => S.Name.ToLower().Contains(Search.Text.ToLower()) || S.Formula.ToLower().Contains(Search.Text.ToLower()));
+
             UpdateTable();
         } // filter changing event should be handled by this method
 
@@ -67,6 +62,12 @@ namespace CourseWork.Forms
                 return;
 
             Substance SDel = Targets[RowId];
+            if (MessageBox.Show("Вы действительно хотите удалить вещество " + SDel.Name + "?",
+                                "Удаление вещества",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
+                return;
+
             if (Archive.Stars.Where(S => S.SubstancesPercentage.Select(SP => SP.Key.ID).Contains(SDel.ID)).Count() != 0)
             {
                 MessageBox.Show("Невозможно удалить вещество т.к. к оно содержится в звезде");

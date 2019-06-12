@@ -100,6 +100,12 @@ namespace CourseWork.Forms
                 return;
 
             Star SDel = Targets[RowId];
+            if (MessageBox.Show("Вы действительно хотите удалить звезду " + SDel.Name + "?",
+                                "Удаление звезды",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
+                return;
+
             List<Star_Substance> Substances = Archive.StarSubstances.Where(S => S.StarId == SDel.ID).ToList();
             foreach (Star_Substance SSP in Substances)
                 Archive.Delete<Star_Substance>(SSP);

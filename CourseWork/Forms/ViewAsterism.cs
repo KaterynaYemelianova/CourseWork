@@ -67,8 +67,14 @@ namespace CourseWork.Forms
             int RowId = GetSelectedRowId();
             if (RowId == -1)
                 return;
-
+            
             Asterism ADel = Targets[RowId];
+            if (MessageBox.Show("Вы действительно хотите удалить созвездие " + ADel.Name + "?", 
+                                "Удаление созвездия", 
+                                MessageBoxButtons.YesNo, 
+                                MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
+                return;
+
             if (Archive.Stars.Where(S => S.StarAsterism.ID == ADel.ID).Count() != 0)
             {
                 MessageBox.Show("Невозможно удалить созвездие т.к. к нему привязана звезда");

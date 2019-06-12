@@ -62,6 +62,12 @@ namespace CourseWork.Forms
                 return;
 
             Discoverer DDel = Targets[RowId];
+            if (MessageBox.Show("Вы действительно хотите удалить первооткрывателя " + DDel.Name + "?",
+                                "Удаление первооткрывателя",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
+                return;
+
             if (Archive.Stars.Where(S => S.SDiscoverer.ID == DDel.ID).Count() != 0)
             {
                 MessageBox.Show("Невозможно удалить первооткрывателя т.к. он открыл звезду");
