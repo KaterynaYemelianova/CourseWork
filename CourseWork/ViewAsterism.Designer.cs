@@ -29,17 +29,20 @@
         private void InitializeComponent()
         {
             this.AsterismGrid = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.Search = new System.Windows.Forms.TextBox();
+            this.SearchLabel = new System.Windows.Forms.Label();
+            this.ChangeSelected = new System.Windows.Forms.Button();
+            this.SquareMax = new System.Windows.Forms.NumericUpDown();
+            this.SquareMin = new System.Windows.Forms.NumericUpDown();
             this.SquareUpperLabel = new System.Windows.Forms.Label();
             this.SquareLowerLabel = new System.Windows.Forms.Label();
             this.SquareFilterChecker = new System.Windows.Forms.CheckBox();
             this.DeleteSelected = new System.Windows.Forms.Button();
-            this.SquareLower = new System.Windows.Forms.NumericUpDown();
-            this.SquareUpper = new System.Windows.Forms.NumericUpDown();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.AsterismGrid)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SquareLower)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SquareUpper)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SquareMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SquareMin)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // AsterismGrid
@@ -49,53 +52,102 @@
             this.AsterismGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AsterismGrid.Dock = System.Windows.Forms.DockStyle.Top;
             this.AsterismGrid.Location = new System.Drawing.Point(0, 0);
+            this.AsterismGrid.Margin = new System.Windows.Forms.Padding(4);
             this.AsterismGrid.MultiSelect = false;
             this.AsterismGrid.Name = "AsterismGrid";
             this.AsterismGrid.ReadOnly = true;
             this.AsterismGrid.RowHeadersVisible = false;
             this.AsterismGrid.RowTemplate.Height = 24;
-            this.AsterismGrid.Size = new System.Drawing.Size(874, 262);
+            this.AsterismGrid.Size = new System.Drawing.Size(1031, 393);
             this.AsterismGrid.TabIndex = 0;
-            this.AsterismGrid.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.AsterismGrid_RowEnter);
             // 
-            // panel1
+            // Search
             // 
-            this.panel1.Controls.Add(this.SquareUpper);
-            this.panel1.Controls.Add(this.SquareLower);
-            this.panel1.Controls.Add(this.SquareUpperLabel);
-            this.panel1.Controls.Add(this.SquareLowerLabel);
-            this.panel1.Controls.Add(this.SquareFilterChecker);
-            this.panel1.Controls.Add(this.DeleteSelected);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 268);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(874, 100);
-            this.panel1.TabIndex = 1;
+            this.Search.Location = new System.Drawing.Point(172, 454);
+            this.Search.Margin = new System.Windows.Forms.Padding(4);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(124, 31);
+            this.Search.TabIndex = 18;
+            this.Search.TextChanged += new System.EventHandler(this.FiltersUpdateHandler);
+            // 
+            // SearchLabel
+            // 
+            this.SearchLabel.AutoSize = true;
+            this.SearchLabel.Location = new System.Drawing.Point(13, 458);
+            this.SearchLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(174, 24);
+            this.SearchLabel.TabIndex = 17;
+            this.SearchLabel.Text = "Поиск по названию";
+            // 
+            // ChangeSelected
+            // 
+            this.ChangeSelected.Location = new System.Drawing.Point(746, 476);
+            this.ChangeSelected.Margin = new System.Windows.Forms.Padding(4);
+            this.ChangeSelected.Name = "ChangeSelected";
+            this.ChangeSelected.Size = new System.Drawing.Size(272, 48);
+            this.ChangeSelected.TabIndex = 11;
+            this.ChangeSelected.Text = "Изменить выделенную запись";
+            this.ChangeSelected.UseVisualStyleBackColor = true;
+            this.ChangeSelected.Click += new System.EventHandler(this.ChangeSelected_Click);
+            // 
+            // SquareMax
+            // 
+            this.SquareMax.DecimalPlaces = 2;
+            this.SquareMax.Location = new System.Drawing.Point(198, 84);
+            this.SquareMax.Margin = new System.Windows.Forms.Padding(4);
+            this.SquareMax.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.SquareMax.Name = "SquareMax";
+            this.SquareMax.Size = new System.Drawing.Size(150, 31);
+            this.SquareMax.TabIndex = 10;
+            this.SquareMax.ValueChanged += new System.EventHandler(this.FiltersUpdateHandler);
+            // 
+            // SquareMin
+            // 
+            this.SquareMin.DecimalPlaces = 2;
+            this.SquareMin.Location = new System.Drawing.Point(198, 29);
+            this.SquareMin.Margin = new System.Windows.Forms.Padding(4);
+            this.SquareMin.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.SquareMin.Name = "SquareMin";
+            this.SquareMin.Size = new System.Drawing.Size(150, 31);
+            this.SquareMin.TabIndex = 9;
+            this.SquareMin.ValueChanged += new System.EventHandler(this.FiltersUpdateHandler);
             // 
             // SquareUpperLabel
             // 
             this.SquareUpperLabel.AutoSize = true;
-            this.SquareUpperLabel.Location = new System.Drawing.Point(108, 52);
+            this.SquareUpperLabel.Location = new System.Drawing.Point(146, 87);
+            this.SquareUpperLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SquareUpperLabel.Name = "SquareUpperLabel";
-            this.SquareUpperLabel.Size = new System.Drawing.Size(28, 17);
+            this.SquareUpperLabel.Size = new System.Drawing.Size(35, 24);
             this.SquareUpperLabel.TabIndex = 8;
             this.SquareUpperLabel.Text = "до:";
             // 
             // SquareLowerLabel
             // 
             this.SquareLowerLabel.AutoSize = true;
-            this.SquareLowerLabel.Location = new System.Drawing.Point(108, 13);
+            this.SquareLowerLabel.Location = new System.Drawing.Point(146, 29);
+            this.SquareLowerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SquareLowerLabel.Name = "SquareLowerLabel";
-            this.SquareLowerLabel.Size = new System.Drawing.Size(27, 17);
+            this.SquareLowerLabel.Size = new System.Drawing.Size(33, 24);
             this.SquareLowerLabel.TabIndex = 7;
             this.SquareLowerLabel.Text = "от:";
             // 
             // SquareFilterChecker
             // 
             this.SquareFilterChecker.AutoSize = true;
-            this.SquareFilterChecker.Location = new System.Drawing.Point(11, 31);
+            this.SquareFilterChecker.Location = new System.Drawing.Point(28, 53);
+            this.SquareFilterChecker.Margin = new System.Windows.Forms.Padding(4);
             this.SquareFilterChecker.Name = "SquareFilterChecker";
-            this.SquareFilterChecker.Size = new System.Drawing.Size(90, 21);
+            this.SquareFilterChecker.Size = new System.Drawing.Size(108, 28);
             this.SquareFilterChecker.TabIndex = 6;
             this.SquareFilterChecker.Text = "Площадь";
             this.SquareFilterChecker.UseVisualStyleBackColor = true;
@@ -103,69 +155,67 @@
             // 
             // DeleteSelected
             // 
-            this.DeleteSelected.Location = new System.Drawing.Point(684, 35);
+            this.DeleteSelected.Location = new System.Drawing.Point(746, 409);
+            this.DeleteSelected.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteSelected.Name = "DeleteSelected";
-            this.DeleteSelected.Size = new System.Drawing.Size(178, 53);
+            this.DeleteSelected.Size = new System.Drawing.Size(272, 48);
             this.DeleteSelected.TabIndex = 5;
             this.DeleteSelected.Text = "Удалить выделенную запись";
             this.DeleteSelected.UseVisualStyleBackColor = true;
+            this.DeleteSelected.Click += new System.EventHandler(this.DeleteSelected_Click);
             // 
-            // SquareLower
+            // groupBox1
             // 
-            this.SquareLower.DecimalPlaces = 2;
-            this.SquareLower.Location = new System.Drawing.Point(155, 13);
-            this.SquareLower.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-            this.SquareLower.Name = "SquareLower";
-            this.SquareLower.Size = new System.Drawing.Size(120, 22);
-            this.SquareLower.TabIndex = 9;
-            this.SquareLower.ValueChanged += new System.EventHandler(this.FiltersUpdateHandler);
-            // 
-            // SquareUpper
-            // 
-            this.SquareUpper.DecimalPlaces = 2;
-            this.SquareUpper.Location = new System.Drawing.Point(155, 52);
-            this.SquareUpper.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-            this.SquareUpper.Name = "SquareUpper";
-            this.SquareUpper.Size = new System.Drawing.Size(120, 22);
-            this.SquareUpper.TabIndex = 10;
-            this.SquareUpper.ValueChanged += new System.EventHandler(this.FiltersUpdateHandler);
+            this.groupBox1.Controls.Add(this.SquareMax);
+            this.groupBox1.Controls.Add(this.SquareUpperLabel);
+            this.groupBox1.Controls.Add(this.SquareMin);
+            this.groupBox1.Controls.Add(this.SquareLowerLabel);
+            this.groupBox1.Controls.Add(this.SquareFilterChecker);
+            this.groupBox1.Location = new System.Drawing.Point(332, 404);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(368, 122);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Поиск по фильтрам";
             // 
             // ViewAsterism
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 368);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1031, 537);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.ChangeSelected);
+            this.Controls.Add(this.Search);
+            this.Controls.Add(this.DeleteSelected);
+            this.Controls.Add(this.SearchLabel);
             this.Controls.Add(this.AsterismGrid);
+            this.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ViewAsterism";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewAsterism";
             ((System.ComponentModel.ISupportInitialize)(this.AsterismGrid)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SquareLower)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SquareUpper)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SquareMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SquareMin)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView AsterismGrid;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.NumericUpDown SquareUpper;
-        private System.Windows.Forms.NumericUpDown SquareLower;
+        private System.Windows.Forms.NumericUpDown SquareMax;
+        private System.Windows.Forms.NumericUpDown SquareMin;
         private System.Windows.Forms.Label SquareUpperLabel;
         private System.Windows.Forms.Label SquareLowerLabel;
         private System.Windows.Forms.CheckBox SquareFilterChecker;
         private System.Windows.Forms.Button DeleteSelected;
+        private System.Windows.Forms.Button ChangeSelected;
+        private System.Windows.Forms.TextBox Search;
+        private System.Windows.Forms.Label SearchLabel;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

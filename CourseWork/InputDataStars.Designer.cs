@@ -32,7 +32,6 @@
             this.NameLabel = new System.Windows.Forms.Label();
             this.DateLabel = new System.Windows.Forms.Label();
             this.DeveloperLabel = new System.Windows.Forms.Label();
-            this.Developer = new System.Windows.Forms.TextBox();
             this.AsterismLabel = new System.Windows.Forms.Label();
             this.AsterismSelect = new System.Windows.Forms.ComboBox();
             this.DistanceLabel = new System.Windows.Forms.Label();
@@ -48,11 +47,15 @@
             this.TMax = new System.Windows.Forms.NumericUpDown();
             this.Confirm = new System.Windows.Forms.Button();
             this.Date = new System.Windows.Forms.NumericUpDown();
+            this.ObjectDiscoverer = new System.Windows.Forms.ComboBox();
+            this.SubstanceCountLabel = new System.Windows.Forms.Label();
+            this.SubstanceCount = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.Distance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Date)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SubstanceCount)).BeginInit();
             this.SuspendLayout();
             // 
             // ObjName
@@ -91,13 +94,6 @@
             this.DeveloperLabel.TabIndex = 5;
             this.DeveloperLabel.Text = "Первооткрыватель:";
             // 
-            // Developer
-            // 
-            this.Developer.Location = new System.Drawing.Point(400, 135);
-            this.Developer.Name = "Developer";
-            this.Developer.Size = new System.Drawing.Size(193, 40);
-            this.Developer.TabIndex = 6;
-            // 
             // AsterismLabel
             // 
             this.AsterismLabel.AutoSize = true;
@@ -109,6 +105,7 @@
             // 
             // AsterismSelect
             // 
+            this.AsterismSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AsterismSelect.FormattingEnabled = true;
             this.AsterismSelect.Location = new System.Drawing.Point(400, 188);
             this.AsterismSelect.Name = "AsterismSelect";
@@ -234,8 +231,9 @@
             // 
             // Confirm
             // 
-            this.Confirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Confirm.Location = new System.Drawing.Point(217, 518);
+            this.Confirm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Confirm.Location = new System.Drawing.Point(221, 564);
             this.Confirm.Name = "Confirm";
             this.Confirm.Size = new System.Drawing.Size(193, 40);
             this.Confirm.TabIndex = 24;
@@ -265,11 +263,57 @@
             0,
             0});
             // 
+            // ObjectDiscoverer
+            // 
+            this.ObjectDiscoverer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ObjectDiscoverer.FormattingEnabled = true;
+            this.ObjectDiscoverer.Location = new System.Drawing.Point(400, 135);
+            this.ObjectDiscoverer.Name = "ObjectDiscoverer";
+            this.ObjectDiscoverer.Size = new System.Drawing.Size(193, 39);
+            this.ObjectDiscoverer.TabIndex = 26;
+            // 
+            // SubstanceCountLabel
+            // 
+            this.SubstanceCountLabel.AutoSize = true;
+            this.SubstanceCountLabel.BackColor = System.Drawing.Color.Transparent;
+            this.SubstanceCountLabel.Location = new System.Drawing.Point(23, 520);
+            this.SubstanceCountLabel.Name = "SubstanceCountLabel";
+            this.SubstanceCountLabel.Size = new System.Drawing.Size(321, 33);
+            this.SubstanceCountLabel.TabIndex = 27;
+            this.SubstanceCountLabel.Text = " Кол-во веществ в составе:";
+            // 
+            // SubstanceCount
+            // 
+            this.SubstanceCount.Location = new System.Drawing.Point(400, 518);
+            this.SubstanceCount.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.SubstanceCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.SubstanceCount.Name = "SubstanceCount";
+            this.SubstanceCount.Size = new System.Drawing.Size(193, 40);
+            this.SubstanceCount.TabIndex = 28;
+            this.SubstanceCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.SubstanceCount.ValueChanged += new System.EventHandler(this.SubstanceCount_ValueChanged);
+            // 
             // InputDataStars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 581);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(628, 611);
+            this.Controls.Add(this.SubstanceCount);
+            this.Controls.Add(this.SubstanceCountLabel);
+            this.Controls.Add(this.ObjectDiscoverer);
             this.Controls.Add(this.Date);
             this.Controls.Add(this.Confirm);
             this.Controls.Add(this.TMax);
@@ -284,7 +328,6 @@
             this.Controls.Add(this.DistanceLabel);
             this.Controls.Add(this.AsterismSelect);
             this.Controls.Add(this.AsterismLabel);
-            this.Controls.Add(this.Developer);
             this.Controls.Add(this.DeveloperLabel);
             this.Controls.Add(this.DateLabel);
             this.Controls.Add(this.NameLabel);
@@ -293,13 +336,13 @@
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "InputDataStars";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "InputDataStars";
-            this.Load += new System.EventHandler(this.InputDataStars_Load);
+            this.Text = "Новая звезда";
             ((System.ComponentModel.ISupportInitialize)(this.Distance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Date)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SubstanceCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,7 +354,6 @@
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label DateLabel;
         private System.Windows.Forms.Label DeveloperLabel;
-        private System.Windows.Forms.TextBox Developer;
         private System.Windows.Forms.Label AsterismLabel;
         private System.Windows.Forms.ComboBox AsterismSelect;
         private System.Windows.Forms.Label DistanceLabel;
@@ -327,5 +369,8 @@
         private System.Windows.Forms.NumericUpDown TMax;
         private System.Windows.Forms.Button Confirm;
         private System.Windows.Forms.NumericUpDown Date;
+        private System.Windows.Forms.ComboBox ObjectDiscoverer;
+        private System.Windows.Forms.Label SubstanceCountLabel;
+        private System.Windows.Forms.NumericUpDown SubstanceCount;
     }
 }

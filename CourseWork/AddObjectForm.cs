@@ -20,42 +20,29 @@ namespace CourseWork
             View
         }
 
-        private List<string> TypeNames = new List<string>() {
-            //"Вещество",
-            //"Галактика",
-            "Звезда",
-            //"Звёздная система",
-            //"Планета",
-            "Созвездие",
-            //"Спутник"
+        private Dictionary<string, Constants.FormGetter> AdditionOptions = new Dictionary<string, Constants.FormGetter>()
+        {
+            { "Звезда", () => new InputDataStars() },
+            { "Созвездие", () => new AddAsterism() },
+            { "Вещество", () => new AddSubstance() },
+            { "Первооткрыватель", () => new AddDiscoverer() }
         };
 
-        private List<Form> AdditionForms = new List<Form>()
+        private Dictionary<string, Constants.FormGetter> ViewOptions = new Dictionary<string, Constants.FormGetter>()
         {
-            new InputDataStars(),            
-            new AddAsterism()
+            { "Звезда", () => new ViewStar() },
+            { "Созвездие", () => new ViewAsterism() },
+            { "Вещество", () => new ViewSubstance() },
+            { "Первооткрыватель", () => new ViewDiscoverer() }
         };
-
-        private List<Form> ViewForms = new List<Form>()
-        {
-            new ViewStar(),
-            new ViewAsterism()
-        };
-
-        /*delegate DataTable DataTableGetter();
-        private List<DataTableGetter> Types = new List<DataTableGetter>() 
-        {
-            DbContext.GetDataTable<Star>,
-            DbContext.GetDataTable<Asterism>
-        };*/
 
         public AddObjectForm(Mode mode)
         {
             InitializeComponent();
             this.WorkMode = mode;
 
-            foreach (string T in TypeNames)
-                TypeName.Items.Add(T);
+            foreach (KeyValuePair<string, Constants.FormGetter> T in mode == Mode.Addition? AdditionOptions : ViewOptions)
+               TypeName.Items.Add(T.Key);
 
             if (TypeName.Items.Count > 0)
                 TypeName.SelectedIndex = 0;
@@ -63,15 +50,12 @@ namespace CourseWork
 
         private void Confirm_Click(object sender, EventArgs e)
         {
-            if (TypeName.SelectedIndex == -1)
-                MessageBox.Show("Тип не задан!");
-
             this.Visible = false;
 
             if (WorkMode == Mode.Addition)
-                AdditionForms[TypeName.SelectedIndex].ShowDialog();
+                AdditionOptions[AdditionOptions.ElementAt(TypeName.SelectedIndex).Key]().ShowDialog();
             else if (WorkMode == Mode.View)
-                ViewForms[TypeName.SelectedIndex].ShowDialog();
+                ViewOptions[ViewOptions.ElementAt(TypeName.SelectedIndex).Key]().ShowDialog();
 
             this.Visible = true;
         }

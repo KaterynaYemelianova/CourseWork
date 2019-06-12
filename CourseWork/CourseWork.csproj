@@ -45,12 +45,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddDiscoverer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDiscoverer.Designer.cs">
+      <DependentUpon>AddDiscoverer.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddObjectForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddObjectForm.Designer.cs">
       <DependentUpon>AddObjectForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddSubstance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSubstance.Designer.cs">
+      <DependentUpon>AddSubstance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Constants.cs" />
     <Compile Include="InputDataStars.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,17 +76,23 @@
     <Compile Include="AddAsterism.Designer.cs">
       <DependentUpon>AddAsterism.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Archive.cs" />
     <Compile Include="Model\Asterism.cs" />
-    <Compile Include="Model\DbContext.cs" />
-    <Compile Include="Model\IDbParseable.cs" />
+    <Compile Include="Database\DbContext.cs" />
+    <Compile Include="Model\Discoverer.cs" />
+    <Compile Include="Database\IDbItem.cs" />
+    <Compile Include="Database\IDbParseable.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\IViewItem.cs" />
+    <Compile Include="Model\ModelItem.cs" />
     <Compile Include="Model\Star.cs" />
-    <Compile Include="Model\TestObj.cs" />
+    <Compile Include="Model\Star_Substance.cs" />
+    <Compile Include="Model\Substance.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewAsterism.cs">
@@ -82,14 +101,32 @@
     <Compile Include="ViewAsterism.Designer.cs">
       <DependentUpon>ViewAsterism.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewDiscoverer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewDiscoverer.Designer.cs">
+      <DependentUpon>ViewDiscoverer.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewStar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewStar.Designer.cs">
       <DependentUpon>ViewStar.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewSubstance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewSubstance.Designer.cs">
+      <DependentUpon>ViewSubstance.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddDiscoverer.resx">
+      <DependentUpon>AddDiscoverer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddObjectForm.resx">
       <DependentUpon>AddObjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSubstance.resx">
+      <DependentUpon>AddSubstance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InputDataStars.resx">
       <DependentUpon>InputDataStars.cs</DependentUpon>
@@ -112,8 +149,14 @@
     <EmbeddedResource Include="ViewAsterism.resx">
       <DependentUpon>ViewAsterism.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewDiscoverer.resx">
+      <DependentUpon>ViewDiscoverer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewStar.resx">
       <DependentUpon>ViewStar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewSubstance.resx">
+      <DependentUpon>ViewSubstance.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -128,6 +171,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

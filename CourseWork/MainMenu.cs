@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CourseWork.Model;
 
 namespace CourseWork
 {
@@ -15,6 +16,7 @@ namespace CourseWork
         public MainMenu()
         {
             InitializeComponent();
+            Archive.Load();
         }
 
         private void AddObject_Click(object sender, EventArgs e)

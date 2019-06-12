@@ -12,3 +12,10 @@ C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\ob
 C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.AddAsterism.resources
 C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.ViewAsterism.resources
 C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.ViewStar.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.ViewSubstance.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.AddDiscoverer.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.ViewDiscoverer.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.AddSubstance.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork — копия\CourseWork\bin\Debug\CourseWork.exe.config
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork — копия\CourseWork\obj\Debug\CourseWork.exe
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork — копия\CourseWork\obj\Debug\CourseWork.pdb

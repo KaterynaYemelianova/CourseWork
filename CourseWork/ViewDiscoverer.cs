@@ -12,54 +12,47 @@ using CourseWork.Database;
 
 namespace CourseWork
 {
-    public partial class ViewAsterism : Form
+    public partial class ViewDiscoverer : Form
     {
-        private List<Asterism> Targets = new List<Asterism>();
-        private List<Predicate<Asterism>> Filters = new List<Predicate<Asterism>>();
+        private List<Discoverer> Targets = new List<Discoverer>();
+        private List<Predicate<Discoverer>> Filters = new List<Predicate<Discoverer>>();
 
-        public ViewAsterism()
+        public ViewDiscoverer()
         {
             InitializeComponent();
-            Targets = Archive.Asterisms;
-            Constants.FillDataGrid(Targets, AsterismGrid);
+            Targets = Archive.Discoverers;
+            Constants.FillDataGrid(Archive.Discoverers, DiscovererGrid);
             //UpdateTable();
         }
 
         public void UpdateTable()
         {
-            AsterismGrid.DataSource = null;
-            AsterismGrid.ClearSelection();
+            DiscovererGrid.DataSource = null;
+            DiscovererGrid.ClearSelection();
 
-            Targets = Archive.Asterisms;
+            Targets = Archive.Discoverers;
 
-            foreach (Predicate<Asterism> F in Filters)
+            foreach (Predicate<Discoverer> F in Filters)
                 Targets = Targets.Where(S => F(S)).ToList();
 
-            Constants.FillDataGrid(Targets, AsterismGrid);
+            Constants.FillDataGrid(Targets, DiscovererGrid);
         }
 
         public void FiltersUpdateHandler(object sender, EventArgs e)
         {
             Filters.Clear();
 
-            SquareMin.Maximum = SquareMax.Value;
-            SquareMax.Minimum = SquareMin.Value;
-
-            if (SquareFilterChecker.Checked)
-                Filters.Add(A => A.Square >= Convert.ToDouble(SquareMin.Value) &&
-                                 A.Square <= Convert.ToDouble(SquareMax.Value));
-
-            Filters.Add(S => S.Name.ToLower().Contains(Search.Text.ToLower()));
+            Filters.Add(D => D.Name.ToLower().Contains(Search.Text.ToLower()));
             
             UpdateTable();
         }
 
         private int GetSelectedRowId()
         {
-            if (AsterismGrid.SelectedCells.Count == 0)
+            if (DiscovererGrid.SelectedCells.Count == 0)
                 return -1;
 
-            return AsterismGrid.SelectedCells[0].RowIndex;
+            return DiscovererGrid.SelectedCells[0].RowIndex;
         }
 
         private void DeleteSelected_Click(object sender, EventArgs e)
@@ -68,7 +61,7 @@ namespace CourseWork
             if (RowId == -1)
                 return;
 
-            Archive.Delete<Asterism>(Targets[RowId]);
+            Archive.Delete<Discoverer>(Targets[RowId]);
             UpdateTable();
         }
 
@@ -78,7 +71,7 @@ namespace CourseWork
             if (RowId == -1)
                 return;
 
-            new AddAsterism(Targets[RowId]).ShowDialog();
+            new AddDiscoverer(Targets[RowId]).ShowDialog();
             UpdateTable();
         }
     }

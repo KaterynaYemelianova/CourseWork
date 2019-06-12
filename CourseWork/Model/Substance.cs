@@ -7,22 +7,22 @@ using System.Data;
 
 namespace CourseWork.Model
 {
-    public class Asterism : ModelItem
+    public class Substance : ModelItem //IDbParseable
     {
         public int ID { get; private set; }
+        public string Formula { get; private set; }
         public string Name { get; private set; }
-        public double Square { get; private set; }
 
-        public override string DataTableName { get { return "AsterismTable"; } }
-        public override string ViewTableName { get { return "Созвездие"; } }
+        public override string DataTableName { get { return "Substance"; } }
+        public override string ViewTableName { get { return "Вещество"; } }
         public override string IdFieldName { get { return "id"; } }
 
-        public Asterism() : base() { }
-        public Asterism(string name, double square, int id = Constants.DefaultIndex) : base()
+        public Substance() : base() { }
+        public Substance(string name, string formula, int id = Constants.DefaultIndex) : base()
         {
             this.ID = id;
             this.Name = name;
-            this.Square = square;
+            this.Formula = formula;        
 
             PostDataLoadingHandle();
             ConfigureViewFields();
@@ -32,25 +32,25 @@ namespace CourseWork.Model
         {
             AddFieldConfig(item => ID = Convert.ToInt32(item[0]), "id");
             AddFieldConfig(item => Name = item[0].ToString(), "name");
-            AddFieldConfig(item => Square = Convert.ToInt32(item[0].ToString().Replace('.', ',')), "square");
+            AddFieldConfig(item => Formula = item[0].ToString(), "formula");
         }
 
         protected override void ConfigureFieldGetters()
         {
             FieldsGetters.Add("id", () => ID == Constants.DefaultIndex ? null : ID.ToString());
             FieldsGetters.Add("name", () => Name);
-            FieldsGetters.Add("square", () => Square.ToString().Replace(',', '.'));
+            FieldsGetters.Add("formula", () => Formula.ToString());
         }
 
         protected override void ConfigureViewFields()
         {
             ViewConfig.Add("Название", () => Name);
-            ViewConfig.Add("Площадь", () => Square);
+            ViewConfig.Add("Формула", () => Formula);
         }
 
         public override string ToString()
         {
-            return Name;
+            return Name + " - " + Formula;
         }
     }
 }
