@@ -16,11 +16,11 @@ namespace CourseWork.Forms
     {
         private bool isAddition { get; set; }
         private Asterism Updated { get; set; }
-
+        
         public AddAsterism() // для добавления
         {
             InitializeComponent();
-            isAddition = true;
+            isAddition = true; 
         }
 
         public AddAsterism(Asterism A) : this() //для изменения

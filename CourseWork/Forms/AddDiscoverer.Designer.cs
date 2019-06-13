@@ -70,9 +70,10 @@
             this.Controls.Add(this.NameLabel);
             this.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.MinimumSize = new System.Drawing.Size(500, 250);
             this.Name = "AddDiscoverer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddDiscoverer";
+            this.Text = "Первооткрыватель";
             this.ResumeLayout(false);
             this.PerformLayout();
 

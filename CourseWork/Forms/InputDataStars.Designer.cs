@@ -235,7 +235,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Confirm.Location = new System.Drawing.Point(221, 564);
             this.Confirm.Name = "Confirm";
-            this.Confirm.Size = new System.Drawing.Size(193, 40);
+            this.Confirm.Size = new System.Drawing.Size(189, 40);
             this.Confirm.TabIndex = 24;
             this.Confirm.Text = "Подтвердить";
             this.Confirm.UseVisualStyleBackColor = true;
@@ -310,7 +310,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(628, 611);
+            this.ClientSize = new System.Drawing.Size(624, 611);
             this.Controls.Add(this.SubstanceCount);
             this.Controls.Add(this.SubstanceCountLabel);
             this.Controls.Add(this.ObjectDiscoverer);
@@ -334,9 +334,11 @@
             this.Controls.Add(this.ObjName);
             this.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.MaximumSize = new System.Drawing.Size(700, 800);
+            this.MinimumSize = new System.Drawing.Size(642, 658);
             this.Name = "InputDataStars";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Новая звезда";
+            this.Text = "Звезда";
             ((System.ComponentModel.ISupportInitialize)(this.Distance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TMin)).EndInit();

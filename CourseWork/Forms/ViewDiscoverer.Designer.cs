@@ -107,7 +107,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ViewDiscoverer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ViewDiscoverer";
+            this.Text = "Все первооткрыватели";
             ((System.ComponentModel.ISupportInitialize)(this.DiscovererGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

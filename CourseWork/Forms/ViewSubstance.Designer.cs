@@ -107,7 +107,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ViewSubstance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ViewSubstance";
+            this.Text = "Все вещества";
             ((System.ComponentModel.ISupportInitialize)(this.SubstanceGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

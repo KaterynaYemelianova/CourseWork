@@ -225,11 +225,10 @@ namespace CourseWork.Forms
                 //если поля не помещаются на форму - увеличиваем ее
                 if (CB.Location.Y + CB.Height + MarginH >= Confirm.Location.Y - Confirm.Height - MarginH)
                     this.Height += CB.Height + MarginH;
-                //и двигаем кнопку
-                Confirm.Location = new Point(Confirm.Location.X, SubstanceCount.Location.Y +
-                                        (SubstanceCount.Height + MarginH) * ((int)SubstanceCount.Value + 1));
             }
-
+            //и двигаем кнопку
+            Confirm.Location = new Point(Confirm.Location.X, SubstanceCount.Location.Y +
+                                        (SubstanceCount.Height + MarginH) * ((int)SubstanceCount.Value + 1));
             PreviousSubstanceSelectCount = (int)SubstanceCount.Value;            
         }
 

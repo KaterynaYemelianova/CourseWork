@@ -94,9 +94,10 @@
             this.Controls.Add(this.NameLabel);
             this.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.MinimumSize = new System.Drawing.Size(501, 277);
             this.Name = "AddSubstance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddSubstance";
+            this.Text = "Вещество";
             this.ResumeLayout(false);
             this.PerformLayout();
 
