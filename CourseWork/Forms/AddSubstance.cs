@@ -34,10 +34,25 @@ namespace CourseWork.Forms
 
         private void Confirm_Click(object sender, EventArgs e)
         {
-            Archive.Add<Substance>(new Substance(SubName.Text, Formula.Text));
-            MessageBox.Show("Вещество добавлено", "Готово!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (SubName.Text == null || SubName.Text.Length == 0)
+            {
+                MessageBox.Show("Заполните поле назвние вещества!");
+                return;
+            }
+
+            if (Formula.Text == null || Formula.Text.Length == 0)
+            {
+                MessageBox.Show("Заполните поле формулы вещества!");
+                return;
+            }
+
+            if (isAddition)
+                Archive.Add<Substance>(new Substance(SubName.Text, Formula.Text));
+            else
+                Archive.Update<Substance>(new Substance(SubName.Text, Formula.Text, Updated.ID));
+
+            MessageBox.Show(isAddition ? "Вещество добавлено" : "Вещество обновлено", "Готово!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
-            //else  Archieve.Update
         }
     }
 }

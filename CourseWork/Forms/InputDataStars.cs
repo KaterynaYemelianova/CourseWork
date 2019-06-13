@@ -101,7 +101,13 @@ namespace CourseWork.Forms
         {
             if (SubstanceSelects.Sum(S => S.NUM.Value) != 1)
             {
-                MessageBox.Show("Сумма часток речовин повинна дорівнювати 1!");
+                MessageBox.Show("Сумма долей веществ должна равнятся 1!");
+                return;
+            }
+
+            if (ObjName.Text == null || ObjName.Text.Length == 0)
+            {
+                MessageBox.Show("Заполните поле названия звезды!");
                 return;
             }
 
@@ -155,7 +161,8 @@ namespace CourseWork.Forms
                 foreach (SubstanceInput SI in SubstanceSelects)//добавлние в модель всех данных о веществах в этой звезде
                     ST.SubstancesPercentage.Add(SI.CB.SelectedItem as Substance, (double)SI.NUM.Value);
             }
-            MessageBox.Show("Звезда добавлена", "Готово!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            MessageBox.Show(isAddition ? "Звезда добавлена" : "Звезда обновлена", "Готово!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 
@@ -225,11 +232,11 @@ namespace CourseWork.Forms
                 //если поля не помещаются на форму - увеличиваем ее
                 if (CB.Location.Y + CB.Height + MarginH >= Confirm.Location.Y - Confirm.Height - MarginH)
                     this.Height += CB.Height + MarginH;
-                //и двигаем кнопку
-                Confirm.Location = new Point(Confirm.Location.X, SubstanceCount.Location.Y +
-                                        (SubstanceCount.Height + MarginH) * ((int)SubstanceCount.Value + 1));
             }
 
+            //двигаем кнопку
+            Confirm.Location = new Point(Confirm.Location.X, SubstanceCount.Location.Y +
+                                    (SubstanceCount.Height + MarginH) * ((int)SubstanceCount.Value + 1));
             PreviousSubstanceSelectCount = (int)SubstanceCount.Value;            
         }
 

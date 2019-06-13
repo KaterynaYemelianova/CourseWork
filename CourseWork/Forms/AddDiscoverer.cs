@@ -33,12 +33,18 @@ namespace CourseWork.Forms
 
         private void Confirm_Click(object sender, EventArgs e)
         {
+            if (NameDisc.Text == null || NameDisc.Text.Length == 0)
+            {
+                MessageBox.Show("Заполните поле имени первооткрывателя!");
+                return;
+            }
+
             if (isAddition)
                 Archive.Add<Discoverer>(new Discoverer(NameDisc.Text.ToString()));
             else
                 Archive.Update<Discoverer>(new Discoverer(NameDisc.Text.ToString(), Updated.ID));
 
-            MessageBox.Show("Первооткрыватель добавлен", "Готово!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(isAddition ? "Первооткрыватель добавлен" : "Первооткрыватель обновлен", "Готово!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
     }
