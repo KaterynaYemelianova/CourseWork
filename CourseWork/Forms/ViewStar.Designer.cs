@@ -397,7 +397,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ViewStar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ViewStar";
+            this.Text = "Все звёзды";
             ((System.ComponentModel.ISupportInitialize)(this.StarGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MassMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MassMin)).EndInit();

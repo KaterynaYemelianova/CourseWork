@@ -335,9 +335,10 @@
             this.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.MaximumSize = new System.Drawing.Size(700, 800);
+            this.MinimumSize = new System.Drawing.Size(642, 658);
             this.Name = "InputDataStars";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Новая звезда";
+            this.Text = "Звезда";
             ((System.ComponentModel.ISupportInitialize)(this.Distance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TMin)).EndInit();

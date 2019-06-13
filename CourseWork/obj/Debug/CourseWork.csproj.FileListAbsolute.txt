@@ -6,16 +6,6 @@ C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\ob
 C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.csproj.GenerateResource.Cache
 C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.exe
 C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.pdb
-C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.MainMenu.resources
-C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.InputDataStars.resources
-C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.AddObjectForm.resources
-C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.AddAsterism.resources
-C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.ViewAsterism.resources
-C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.ViewStar.resources
-C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.ViewSubstance.resources
-C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.AddDiscoverer.resources
-C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.ViewDiscoverer.resources
-C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.AddSubstance.resources
 C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork — копия\CourseWork\bin\Debug\CourseWork.exe.config
 C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork — копия\CourseWork\obj\Debug\CourseWork.exe
 C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork — копия\CourseWork\obj\Debug\CourseWork.pdb
@@ -37,3 +27,13 @@ C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\ob
 C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.ViewDiscoverer.resources
 C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.ViewStar.resources
 C:\Users\Олег\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.ViewSubstance.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.AddDiscoverer.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.AddObjectForm.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.AddSubstance.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.InputDataStars.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.MainMenu.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.AddAsterism.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.ViewAsterism.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.ViewDiscoverer.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.ViewStar.resources
+C:\Users\Катя\Documents\Visual Studio 2012\Projects\CourseWork\CourseWork\obj\Debug\CourseWork.Forms.ViewSubstance.resources

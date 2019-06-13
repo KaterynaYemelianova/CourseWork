@@ -99,9 +99,10 @@
             this.Controls.Add(this.NameLabel);
             this.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.MinimumSize = new System.Drawing.Size(579, 280);
             this.Name = "AddAsterism";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddAsterism";
+            this.Text = "Созвездие";
             ((System.ComponentModel.ISupportInitialize)(this.Square)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

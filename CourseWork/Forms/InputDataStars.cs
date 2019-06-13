@@ -237,6 +237,7 @@ namespace CourseWork.Forms
             //двигаем кнопку
             Confirm.Location = new Point(Confirm.Location.X, SubstanceCount.Location.Y +
                                     (SubstanceCount.Height + MarginH) * ((int)SubstanceCount.Value + 1));
+
             PreviousSubstanceSelectCount = (int)SubstanceCount.Value;            
         }
 

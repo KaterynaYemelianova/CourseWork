@@ -193,7 +193,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ViewAsterism";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ViewAsterism";
+            this.Text = "Все созвездия";
             ((System.ComponentModel.ISupportInitialize)(this.AsterismGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SquareMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SquareMin)).EndInit();
