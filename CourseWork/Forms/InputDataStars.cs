@@ -61,7 +61,11 @@ namespace CourseWork.Forms
             Updated = S;
 
             ObjName.Text = S.Name;
-            Date.Value = S.Date;
+
+            DateKnown.Checked = S.Date.HasValue;
+            if (S.Date.HasValue)
+                Date.Value = S.Date.Value;
+            Date.Value = S.Date.Value;
 
             if (S.SDiscoverer == null)
                 ObjectDiscoverer.SelectedIndex = 0;
@@ -70,7 +74,11 @@ namespace CourseWork.Forms
 
             AsterismSelect.SelectedItem = S.StarAsterism;
             Distance.Value = (decimal)S.Distance;
-            Mass.Value = (decimal)S.Mass;
+
+            MassKnown.Checked = S.Mass.HasValue;
+            if(S.Mass.HasValue)
+                Mass.Value = (decimal)S.Mass.Value;
+
             TMin.Value = (decimal)S.TMin;
             TMax.Value = (decimal)S.TMax;
 
@@ -115,11 +123,11 @@ namespace CourseWork.Forms
             {
                 List<string> IDS = Archive.Add<Star>(new Star(
                     ObjName.Text,
-                    Convert.ToInt32(Date.Value),
+                    DateKnown.Checked ? (int?)Date.Value : null,
                     ObjectDiscoverer.SelectedIndex == 0 ? null : ObjectDiscoverer.SelectedItem as Discoverer,
                     AsterismSelect.Items.Count == 0 ? null : AsterismSelect.SelectedItem as Asterism,
                     Convert.ToDouble(Distance.Value),
-                    Convert.ToDouble(Mass.Value),
+                    MassKnown.Checked ? (double?)Mass.Value : null,
                     Convert.ToDouble(TMin.Value),
                     Convert.ToDouble(TMax.Value),
                     ColorVars
@@ -144,11 +152,11 @@ namespace CourseWork.Forms
 
                 Archive.Update<Star>(new Star(
                     ObjName.Text,
-                    Convert.ToInt32(Date.Value),
+                    DateKnown.Checked ? (int?)Date.Value : null,
                     ObjectDiscoverer.SelectedIndex == 0 || ObjectDiscoverer.SelectedIndex == 0 ? null : ObjectDiscoverer.SelectedItem as Discoverer,
                     AsterismSelect.Items.Count == 0 ? null : AsterismSelect.SelectedItem as Asterism,
                     Convert.ToDouble(Distance.Value),
-                    Convert.ToDouble(Mass.Value),
+                    MassKnown.Checked ? (double?)Mass.Value : null,
                     Convert.ToDouble(TMin.Value),
                     Convert.ToDouble(TMax.Value),
                     ColorVars,

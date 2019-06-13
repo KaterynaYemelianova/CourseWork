@@ -86,7 +86,7 @@ namespace CourseWork
             for (int i = 0; i < MaxWidths.Length && i < dgw.Columns.Count; i++)
                 dgw.Columns[i].Width = (int)(MaxWidths[i] * SYMBOL_WIDTH + WIDTH_PADDING * 2);
 
-            dgw.RowTemplate.Height = (int)(items.Average(item => item.RowCount) * ROW_HEIGHT);
+            dgw.RowTemplate.Height = (int)(items.Max(item => item.RowCount) * ROW_HEIGHT);
         }
 
         public static void FillDataGrid(IEnumerable<ModelItem> items, DataGridView dgw)

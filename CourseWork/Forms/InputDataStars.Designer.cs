@@ -50,6 +50,8 @@
             this.ObjectDiscoverer = new System.Windows.Forms.ComboBox();
             this.SubstanceCountLabel = new System.Windows.Forms.Label();
             this.SubstanceCount = new System.Windows.Forms.NumericUpDown();
+            this.DateKnown = new System.Windows.Forms.CheckBox();
+            this.MassKnown = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.Distance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TMin)).BeginInit();
@@ -305,12 +307,32 @@
             0});
             this.SubstanceCount.ValueChanged += new System.EventHandler(this.SubstanceCount_ValueChanged);
             // 
+            // DateKnown
+            // 
+            this.DateKnown.AutoSize = true;
+            this.DateKnown.Location = new System.Drawing.Point(376, 91);
+            this.DateKnown.Name = "DateKnown";
+            this.DateKnown.Size = new System.Drawing.Size(18, 17);
+            this.DateKnown.TabIndex = 29;
+            this.DateKnown.UseVisualStyleBackColor = true;
+            // 
+            // MassKnown
+            // 
+            this.MassKnown.AutoSize = true;
+            this.MassKnown.Location = new System.Drawing.Point(376, 306);
+            this.MassKnown.Name = "MassKnown";
+            this.MassKnown.Size = new System.Drawing.Size(18, 17);
+            this.MassKnown.TabIndex = 30;
+            this.MassKnown.UseVisualStyleBackColor = true;
+            // 
             // InputDataStars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(624, 611);
+            this.Controls.Add(this.MassKnown);
+            this.Controls.Add(this.DateKnown);
             this.Controls.Add(this.SubstanceCount);
             this.Controls.Add(this.SubstanceCountLabel);
             this.Controls.Add(this.ObjectDiscoverer);
@@ -374,5 +396,7 @@
         private System.Windows.Forms.ComboBox ObjectDiscoverer;
         private System.Windows.Forms.Label SubstanceCountLabel;
         private System.Windows.Forms.NumericUpDown SubstanceCount;
+        private System.Windows.Forms.CheckBox DateKnown;
+        private System.Windows.Forms.CheckBox MassKnown;
     }
 }
